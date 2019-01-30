@@ -2,6 +2,11 @@ import React from 'react';
 
 const App = (props) => {
   const anecdotes = props.store.getState()
+  
+  const vote = (id) => {
+    console.log('vote', id)
+  }
+  
   return (
     <div>
       <h2>Anecdotes</h2>
@@ -12,7 +17,7 @@ const App = (props) => {
           </div>
           <div>
             has {anecdote.votes}
-            <button>vote</button>
+            <button onClick={() => vote(anecdote.id)}>vote</button>
           </div>
         </div>
       )}
